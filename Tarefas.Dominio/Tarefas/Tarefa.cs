@@ -10,16 +10,16 @@ public class Tarefa : EntidadeBase
     public string Descricao { get; init; }
     public DateTime DataCriacao { get; init; } = DateTime.Now;
     public DateTime PrazoFinalizacao { get; init; }
-    public int UserId { get; init; }
+    public int UsuarioId { get; init; }
     public StatusTarefa Status { get; private set; } = StatusTarefa.Criada;
 
-    public Tarefa(string titulo, string descricao, DateTime dataCriacao, DateTime prazoFinalizacao, int userId, StatusTarefa status)
+    public Tarefa(string titulo, string descricao, DateTime dataCriacao, DateTime prazoFinalizacao, int usuarioId, StatusTarefa status)
     {
         Titulo = titulo;
         Descricao = descricao;
         DataCriacao = dataCriacao;
         PrazoFinalizacao = prazoFinalizacao;
-        UserId = userId;
+        UsuarioId = usuarioId;
         Status = status;
     }   
     
@@ -31,17 +31,15 @@ public class Tarefa : EntidadeBase
     public override void Validar()
     {
         if(string.IsNullOrWhiteSpace(Titulo))
-            Mensagens.Add("É necessário informar o titulo.");
+            Mensagens.Add(StringResource.NECESSARIO_INFORMAR_O_TITULO);
         
         if(string.IsNullOrWhiteSpace(Descricao))
-            Mensagens.Add("É necessário informar a descrição");
+            Mensagens.Add(StringResource.NECESSARIO_INFORMAR_A_DESCRICAO);
         
         if(DataCriacao == DateTime.MinValue)
-            Mensagens.Add("É necessário informar a data de criação");
+            Mensagens.Add(StringResource.NECESSARIO_INFORMAR_A_DATA_DE_CRIACAO);
         
-        if(UserId <= 0)
-            Mensagens.Add("É necessário informar o id do usuário");
-        
-        throw new NotImplementedException();
+        if(UsuarioId <= 0)
+            Mensagens.Add(StringResource.NECESSARIO_INFORMAR_O_ID_DO_USUARIO);
     }
 }

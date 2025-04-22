@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tarefas.Api", "Tarefas.Api\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tarefas.Dominio", "Tarefas.Dominio\Tarefas.Dominio.csproj", "{2FDA8D12-8EBC-4E58-BE0F-B802FC2AA5E1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tarefas.Test", "Tarefas.Test\Tarefas.Test.csproj", "{779EF75B-372B-49C4-9E82-472B41605BAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,18 @@ Global
 		{2FDA8D12-8EBC-4E58-BE0F-B802FC2AA5E1}.Release|x64.Build.0 = Release|Any CPU
 		{2FDA8D12-8EBC-4E58-BE0F-B802FC2AA5E1}.Release|x86.ActiveCfg = Release|Any CPU
 		{2FDA8D12-8EBC-4E58-BE0F-B802FC2AA5E1}.Release|x86.Build.0 = Release|Any CPU
+		{779EF75B-372B-49C4-9E82-472B41605BAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{779EF75B-372B-49C4-9E82-472B41605BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{779EF75B-372B-49C4-9E82-472B41605BAD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{779EF75B-372B-49C4-9E82-472B41605BAD}.Debug|x64.Build.0 = Debug|Any CPU
+		{779EF75B-372B-49C4-9E82-472B41605BAD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{779EF75B-372B-49C4-9E82-472B41605BAD}.Debug|x86.Build.0 = Debug|Any CPU
+		{779EF75B-372B-49C4-9E82-472B41605BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{779EF75B-372B-49C4-9E82-472B41605BAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{779EF75B-372B-49C4-9E82-472B41605BAD}.Release|x64.ActiveCfg = Release|Any CPU
+		{779EF75B-372B-49C4-9E82-472B41605BAD}.Release|x64.Build.0 = Release|Any CPU
+		{779EF75B-372B-49C4-9E82-472B41605BAD}.Release|x86.ActiveCfg = Release|Any CPU
+		{779EF75B-372B-49C4-9E82-472B41605BAD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

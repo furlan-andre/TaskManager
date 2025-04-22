@@ -8,9 +8,13 @@ public abstract class EntidadeBase
 
     public abstract void Validar();
     
-    public bool Valido()
+    public bool Sucesso()
     {
-        Validar();
-        return this.Mensagens.Any();
+        return !this.Mensagens.Any();
+    }
+
+    public List<string> ObterMensagens()
+    {
+        return this.Mensagens;
     }
 }
