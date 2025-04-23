@@ -8,9 +8,11 @@
 
   <ItemGroup>    
     <ProjectReference Include="..\Tarefas.Dominio\Tarefas.Dominio.csproj" />
+    <ProjectReference Include="..\Tarefas.Infra\Tarefas.Infra.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.1" />
   </ItemGroup>
 

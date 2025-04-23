@@ -23,37 +23,7 @@ namespace Tarefas.Test.Dominio.Tarefas;
             Assert.False(tarefa.Sucesso());
             Assert.Equal(mensagemEsperada, tarefa.ObterMensagens().FirstOrDefault());
         }
-        
-        [Fact]
-        public void NaoDevePermitirCriarTarefaSemDescricao()
-        {
-            // Arrange
-            var tarefa = new TarefaBuilder().ComDescricao("").Build();
-            var mensagemEsperada = StringResource.NECESSARIO_INFORMAR_A_DESCRICAO;
-            
-            // Act
-            tarefa.Validar();
 
-            // Assert
-            Assert.False(tarefa.Sucesso());
-            Assert.Equal(mensagemEsperada, tarefa.ObterMensagens().FirstOrDefault());
-        }
-        
-        [Fact]
-        public void NaoDevePermitirCriarTarefaSemDataDeCriacao()
-        { 
-            // Arrange
-            var tarefa = new TarefaBuilder().ComDataCriacao(DateTime.MinValue).Build();
-            var mensagemEsperada = StringResource.NECESSARIO_INFORMAR_A_DATA_DE_CRIACAO;
-            
-            // Act
-            tarefa.Validar();
-
-            // Assert
-            Assert.False(tarefa.Sucesso());
-            Assert.Equal(mensagemEsperada, tarefa.ObterMensagens().FirstOrDefault());
-        }
-        
         [Fact]
         public void NaoDevePermitirCriarTarefaSemIdDoUsuario()
         {
@@ -75,19 +45,17 @@ namespace Tarefas.Test.Dominio.Tarefas;
             // Arrange
             var titulo = _faker.Lorem.Sentence(3);
             var descricao =  _faker.Lorem.Paragraph();
-            var dataCriacao = DateTime.Now;
-            var prazo = dataCriacao.AddDays(5);
+            var prazo = DateTime.Now.AddDays(5);
             var userId = _faker.Random.Int(1, 1000);
             var status = StatusTarefa.Criada;
 
             // Act
-            var tarefa = new Tarefa(titulo, descricao, dataCriacao, prazo, userId, status);
+            var tarefa = new Tarefa(titulo, descricao, prazo, userId, status);
 
             // Assert
             Assert.Equal(titulo, tarefa.Titulo);
             Assert.Equal(descricao, tarefa.Descricao);
-            Assert.Equal(dataCriacao, tarefa.DataCriacao);
-            Assert.Equal(prazo, tarefa.PrazoFinalizacao);
+            Assert.Equal(prazo, tarefa.PrazoConclusao);
             Assert.Equal(userId, tarefa.UsuarioId);
             Assert.Equal(StatusTarefa.Criada, tarefa.Status);
         }

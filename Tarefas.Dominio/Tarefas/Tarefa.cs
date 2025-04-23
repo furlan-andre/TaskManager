@@ -9,16 +9,15 @@ public class Tarefa : EntidadeBase
     public string Titulo { get; init; }
     public string Descricao { get; init; }
     public DateTime DataCriacao { get; init; } = DateTime.Now;
-    public DateTime PrazoFinalizacao { get; init; }
+    public DateTime PrazoConclusao { get; init; }
     public int UsuarioId { get; init; }
     public StatusTarefa Status { get; private set; } = StatusTarefa.Criada;
 
-    public Tarefa(string titulo, string descricao, DateTime dataCriacao, DateTime prazoFinalizacao, int usuarioId, StatusTarefa status)
+    public Tarefa(string titulo, string descricao, DateTime prazoConclusao, int usuarioId, StatusTarefa status = StatusTarefa.Criada)
     {
         Titulo = titulo;
         Descricao = descricao;
-        DataCriacao = dataCriacao;
-        PrazoFinalizacao = prazoFinalizacao;
+        PrazoConclusao = prazoConclusao;
         UsuarioId = usuarioId;
         Status = status;
     }   
@@ -35,9 +34,6 @@ public class Tarefa : EntidadeBase
         
         if(string.IsNullOrWhiteSpace(Descricao))
             Mensagens.Add(StringResource.NECESSARIO_INFORMAR_A_DESCRICAO);
-        
-        if(DataCriacao == DateTime.MinValue)
-            Mensagens.Add(StringResource.NECESSARIO_INFORMAR_A_DATA_DE_CRIACAO);
         
         if(UsuarioId <= 0)
             Mensagens.Add(StringResource.NECESSARIO_INFORMAR_O_ID_DO_USUARIO);

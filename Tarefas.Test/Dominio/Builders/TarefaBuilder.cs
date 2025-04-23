@@ -21,7 +21,6 @@ namespace Tarefas.Test.Dominio.Builders
             _id = _faker.Random.Int(1, 1000);
             _titulo = _faker.Lorem.Sentence(3);
             _descricao = _faker.Lorem.Paragraph();
-            _dataCriacao = _faker.Date.Recent();
             _prazoFinalizacao = _dataCriacao.AddDays(_faker.Random.Int(1, 30));
             _usuarioId = _faker.Random.Int(1, 1000);
             _status = StatusTarefa.Criada;
@@ -36,12 +35,6 @@ namespace Tarefas.Test.Dominio.Builders
         public TarefaBuilder ComTitulo(string titulo)
         {
             _titulo = titulo;
-            return this;
-        }
-
-        public TarefaBuilder ComDescricao(string descricao)
-        {
-            _descricao = descricao;
             return this;
         }
 
@@ -71,7 +64,7 @@ namespace Tarefas.Test.Dominio.Builders
 
         public Tarefa Build()
         {
-            return new Tarefa(_titulo, _descricao, _dataCriacao, _prazoFinalizacao, _usuarioId, _status);
+            return new Tarefa(_titulo, _descricao, _prazoFinalizacao, _usuarioId, _status);
         }
     }
 }
