@@ -12,7 +12,7 @@
 
 ## Como usar
 - Para se testar de forma automática é só usar a plataforma de testes do projeto Tarefas.Test
-- Para se utlizar (testes manuais) é preciso setar o projeto Tarefas.Api como startup e rodar em debug mode.
+- Para se utilizar (testes manuais) é preciso setar o projeto Tarefas.Api como startup e rodar em debug mode.
 - Esta configurado para abrir automaticamente a pagina do Swagger na porta 5099.
 - Endereço do swagger: http://localhost:5099/swagger/index.html
 - Como foi feito com documentação viva com Swagger, é auto descritivo e serve de manual.
