@@ -25,7 +25,7 @@ public class ArmazenadorTarefa : IArmazenadorTarefa
         
         tarefa.Validar();
         if(!tarefa.Sucesso())
-            throw new ArgumentException(tarefa.ObterMensagens().ToString());
+            throw new ArgumentException(string.Join(", ", tarefa.ObterMensagens()));
         
         await _repository.ArmazenarTarefa(tarefa);
         

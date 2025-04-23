@@ -4,7 +4,7 @@ public abstract class EntidadeBase
 {
     public int Id { get; set; }
 
-    internal List<string> Mensagens { get; set; } = new List<string>();
+    internal IList<string> Mensagens { get; set; } = new List<string>();
 
     public abstract void Validar();
     
@@ -13,8 +13,5 @@ public abstract class EntidadeBase
         return !this.Mensagens.Any();
     }
 
-    public List<string> ObterMensagens()
-    {
-        return this.Mensagens;
-    }
+    public IEnumerable<string> ObterMensagens() => Mensagens.ToList();
 }
