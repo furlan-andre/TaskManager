@@ -7,7 +7,7 @@
 - Usando conceitos do DDD
 - Usando diretrizes do Clean Code
 - Usando xUnit, FluentAssertions, Moq, Faker, Builder Pattern
-- Usando Onior Archtecture
+- Usando Onion Archtecture
 - Usando documentação viva com Swagger
 
 ## Como usar
